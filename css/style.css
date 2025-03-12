@@ -1,58 +1,91 @@
-  /* Create an accessible color palette using var()function */
-  /* https://www.w3schools.com/css/css3_variables.asp */
-  
-  form {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    border: 1px solid #ccc;
-    border-radius: 16px;
-    width:70%;
-    margin: 20px auto;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: #702082;
-    background: #CFC096;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-  .radio {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    /* background: #575294; */
-    color: #702082;
-  }
+/* General Styling */
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #222;
+    color: #00FF00;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
-  #name {
-    width: 100%;
+/* Form Container */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #111;
+    width: 50%;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0px #FF00FF, 8px 8px 0px #00FFFF;
+    border: 3px solid #00FF00;
+}
+
+/* Labels */
+label {
+    font-size: 14px;
+    color: #FF00FF;
+    text-transform: uppercase;
+}
+
+/* Inputs & Textarea */
+input[type="text"],
+textarea {
+    background-color: #222;
+    color: #00FF00;
+    border: 2px solid #00FFFF;
     padding: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    background: #CFC096;
-    color: #9B9A6D;
-  }
-
-  #message {
+    font-size: 12px;
+    font-family: 'Press Start 2P', cursive;
     width: 100%;
-    padding: 10px;
-    resize: vertical;
-  }
+}
 
-  input,
-  textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    width: 100%;
-  }
+/* Radio Button Container */
+.radio {
+    text-align: left;
+    color: #FF00FF;
+}
 
-  input[type="submit"] {
-    width: 100%;
+/* Radio Buttons */
+input[type="radio"] {
+    accent-color: #00FF00;
+    transform: scale(1.5);
+    margin-right: 5px;
+}
+
+/* Submit & Reset Buttons */
+input[type="submit"],
+button {
+    background-color: #FF00FF;
+    color: #fff;
+    border: 2px solid #00FFFF;
     padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    font-size: 14px;
     cursor: pointer;
-  }
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+}
 
-  input[type="submit"]:hover {
-    background-color: #45a049;
-  }
+input[type="submit"]:hover,
+button:hover {
+    background-color: #00FFFF;
+    border: 2px solid #FF00FF;
+    color: #222;
+    box-shadow: 4px 4px 0px #00FF00;
+}
+
+/* Add blinking effect to the form container */
+@keyframes glow {
+    0% { box-shadow: 4px 4px 0px #FF00FF, 8px 8px 0px #00FFFF; }
+    50% { box-shadow: 4px 4px 0px #00FFFF, 8px 8px 0px #FF00FF; }
+    100% { box-shadow: 4px 4px 0px #FF00FF, 8px 8px 0px #00FFFF; }
+}
+
+form {
+    animation: glow 1.5s infinite alternate;
+}
